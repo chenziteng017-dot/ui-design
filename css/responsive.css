@@ -110,6 +110,27 @@
     .industry-text {
         padding: 0 10px;
     }
+    .analysis-swiper {
+        display: block;
+    }
+    .carousel-detail {
+        margin: 24px auto;
+    }
+    .swiper-wrapper {
+        width: 92%;
+        margin: 0 auto;
+    }
+    .industry-swiper {
+        width: 92%;
+        margin: 0 auto;
+    }
+    .industry-dot {
+        bottom: 4%;
+    }
+    .models-item-wrapper {
+        width: 92%;
+        margin: 0 auto;
+    }
 
     .models {
         flex-direction: column;
@@ -117,8 +138,11 @@
     }
 
     .models-item {
-        width: 90%;
+        width: 100%;
         margin-bottom: 20px;
+    }
+    .freelance {
+        width: 92%;
     }
     .goals {
         display: block;
@@ -230,97 +254,6 @@
     }
 }
 
-@media only screen and (min-width: 901px) {
-    .header-container {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .carousel-container {
-        padding: 40px 0;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .carousel {
-        padding: 20px;
-        gap: 25px;
-        scroll-padding: 20px;
-    }
-
-    .carousel-item {
-        width: 320px;
-        height: 450px;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-        margin: 5px;
-        border-radius: 16px;
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    .carousel-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .carousel-content {
-        height: 100%;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .carousel-content img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .carousel-item:hover .carousel-content img {
-        transform: scale(1.05);
-    }
-
-    .carousel-detail {
-        max-width: 1400px;
-        padding: 0 40px;
-        margin: 40px auto;
-        gap: 40px;
-    }
-
-    .insights-img {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 250px);
-    }
-
-    .item-01 {
-        grid-column: 1 / 3;
-        grid-row: 1 / 3;
-    }
-
-    .item-02 {
-        grid-column: 3 / 4;
-        grid-row: 1 / 2;
-    }
-
-    .item-03 {
-        grid-column: 4 / 5;
-        grid-row: 1 / 2;
-    }
-
-    .item-04 {
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
-    }
-
-    .item-05 {
-        grid-column: 4 / 5;
-        grid-row: 2 / 3;
-    }
-}
-
-/* Carousel Scrollbar */
 .carousel {
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.2) transparent;

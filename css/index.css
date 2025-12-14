@@ -568,6 +568,8 @@ nav {
     justify-content: space-between;
 }
 .freelance {
+    width: 32%;
+    overflow: hidden;
     border-radius: 6px;
     cursor: pointer;
     height: 360px;
