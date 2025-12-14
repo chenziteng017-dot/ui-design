@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: "Inter", sans-serif;
@@ -146,14 +141,17 @@ nav {
     margin: 20px auto;
 }
 .hero-arrow {
-    width: 96%;
+    width: 50%;
     display: flex;
     justify-content: flex-end;
 }
 .hero-arrow ul {
     display: flex;
 }
-.hero-arrow li:last-child{
+.hero-arrow li {
+    cursor: pointer;
+}
+.hero-arrow li:last-child {
     margin-left: 64px;
 }
 .hero-arrow li:last-child img {
@@ -198,10 +196,10 @@ nav {
 }
 
 .skills-grid {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    gap: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 640px;
 }
 
 .skills-item p {
@@ -214,7 +212,15 @@ nav {
     padding: 10px 10px 0;
 }
 .skills-item {
+    position: absolute;
     width: 48%;
+    transition: all 0.5s ease-in-out;
+}
+.skills-item:nth-child(2) {
+    left: 52%; 
+}
+.skills-item:nth-child(3) {
+    left: 100%;
 }
 .skills-item img {
     width: 100%;
@@ -309,11 +315,19 @@ nav {
     border-radius: 50%;
     overflow: hidden;
     background-color: #000;
+    animation: xunzhuan 15s linear infinite;
 }
 .profile-circle img {
     width: 100%;
 }
-
+@keyframes xunzhuan {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .conclusion-section {
     position: relative;
     max-width: 1200px;

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-   
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -146,14 +146,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const originalItems = Array.from(carousel.querySelectorAll('.carousel-item'));
         if (originalItems.length === 0) return;
-        let pos = 0;           
+        let pos = 0;
         let lastTimestamp = 0;
         let rafId = null;
         let paused = false;
-        const speed = 0.5;         
+        const speed = 0.5;
 
-        let originalWidth = 0;    
-        let totalRenderedWidth = 0; 
+        let originalWidth = 0;
+        let totalRenderedWidth = 0;
 
         carousel.style.display = 'flex';
         carousel.style.flexWrap = 'nowrap';
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
             stop();
             pos = 0;
             carousel.style.transform = 'translateX(0)';
-        
+
             computeWidths();
             start();
         });
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cloneOnce();
             requestAnimationFrame(() => {
                 computeWidths();
-    
+
                 requestAnimationFrame(() => {
                     start();
                 });
@@ -299,4 +299,39 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', function () {
         document.body.classList.add('loaded');
     });
+    const prev = document.querySelector('.swiper-button-prev');
+    const next = document.querySelector('.swiper-button-next');
+    prev.addEventListener('click', () => {
+        const allSlides = document.querySelectorAll('.swiper-slide');
+        const currentIndex = Array.from(allSlides).findIndex(slide => slide.classList.contains('active'));
+        if (currentIndex === -1) return; 
+        allSlides.forEach(slide => slide.classList.remove('active'));
+        const prevIndex = (currentIndex - 1 + allSlides.length) % allSlides.length;
+        allSlides[prevIndex].classList.add('active');
+    });
+    next.addEventListener('click', () => {
+        const currentSlide = document.querySelector('.swiper-slide.active');
+        const allSlides = document.querySelectorAll('.swiper-slide');
+        currentSlide.classList.remove('active');
+        if (currentSlide.nextElementSibling) {
+            currentSlide.nextElementSibling.classList.add('active');
+        } else {
+            allSlides[0].classList.add('active');
+        }
+    })
+
+    const dotLis = document.querySelectorAll('.industry-dot li');
+    dotLis.forEach((dotLi, index) => {
+        dotLi.addEventListener('click', function () {
+            dotLis.forEach(dotLi => {
+                dotLi.classList.remove('active');
+            });
+            dotLi.classList.add('active');
+            const allSlides = document.querySelectorAll('.industry-text');
+            allSlides.forEach(slide => {
+                slide.classList.remove('industry-swiper-active');
+            });
+            allSlides[index].classList.add('industry-swiper-active');
+        });
+    })
 });

@@ -1,24 +1,13 @@
-// 导航栏滚动效果
-const header = document.querySelector('.header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.backgroundColor = '#fff';
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.backgroundColor = 'transparent';
-        header.style.boxShadow = 'none';
-    }
-});
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 100,
@@ -78,7 +67,7 @@ buttons.forEach(button => {
         button.style.transform = 'translateY(-2px)';
         button.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
     });
-    
+
     button.addEventListener('mouseleave', () => {
         button.style.transform = 'translateY(0)';
         button.style.boxShadow = 'none';
@@ -92,7 +81,7 @@ navLinks.forEach(link => {
         link.style.color = '#000';
         link.style.fontWeight = '600';
     });
-    
+
     link.addEventListener('mouseleave', () => {
         if (link.classList.contains('secondary')) {
             link.style.color = '#666';
@@ -106,18 +95,18 @@ const iconItems = document.querySelectorAll('.icon-item');
 iconItems.forEach((icon, index) => {
     // 为每个图标添加不同的背景色
     const colors = [
-        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', 
+        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4',
         '#DDA0DD', '#98D8C8', '#F7DC6F'
     ];
-    
+
     icon.style.backgroundColor = colors[index % colors.length];
-    
+
     // 悬停动画
     icon.addEventListener('mouseenter', () => {
         icon.style.transform = 'scale(1.1) rotate(5deg)';
         icon.style.transition = 'transform 0.3s ease';
     });
-    
+
     icon.addEventListener('mouseleave', () => {
         icon.style.transform = 'scale(1) rotate(0)';
     });
@@ -153,14 +142,14 @@ window.addEventListener('scroll', () => {
         transition: opacity 0.3s ease;
         z-index: 1000;
     `;
-    
+
     if (window.scrollY > 300) {
         if (!document.getElementById('scrollToTop')) {
             document.body.appendChild(scrollToTopButton);
             setTimeout(() => {
                 scrollToTopButton.style.opacity = '1';
             }, 10);
-            
+
             scrollToTopButton.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
@@ -188,7 +177,7 @@ const mobileNavLinks = document.querySelector('.nav-links');
 if (mobileMenuBtn && mobileNavLinks) {
     mobileMenuBtn.addEventListener('click', () => {
         mobileNavLinks.classList.toggle('active');
-        
+
         // 汉堡菜单图标动画
         const spans = mobileMenuBtn.querySelectorAll('span');
         if (spans.length >= 3) {
@@ -204,7 +193,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function () {
         if (mobileNavLinks && mobileNavLinks.classList.contains('active')) {
             mobileNavLinks.classList.remove('active');
-            
+
             // 重置汉堡菜单图标
             const spans = mobileMenuBtn?.querySelectorAll('span');
             if (spans && spans.length >= 3) {
@@ -213,5 +202,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 spans[2].classList.remove('rotate-reverse');
             }
         }
+    });
+});
+
+const prev = document.querySelector('.hero-prev');
+const next = document.querySelector('.hero-next');
+prev?.addEventListener('click', () => {
+
+    const skillsList = document.querySelectorAll('.skills-item');
+    skillsList.forEach((item, index) => {
+        let left = '0%';
+        if (index === 0) {
+            left = '-50%';
+        } else if (index === 1) {
+            left = '0%';
+        } else if (index === 2) {
+            left = '52%';
+        }
+        item.style.left = left;
+    });
+});
+
+next?.addEventListener('click', () => { 
+    const skillsList = document.querySelectorAll('.skills-item');
+    skillsList.forEach((item, index) => {
+        let left = '0%';
+        if (index === 0) {
+            left = '0%';
+        } else if (index === 1) {
+            left = '52%';
+        } else if (index === 2) {
+            left = '100%';
+        }
+        item.style.left = left;
     });
 });
