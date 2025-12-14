@@ -601,9 +601,6 @@ nav {
 .models-item-img {
     overflow: hidden;
 }
-.models-item:first-child img {
-    transform: translateY(-36%);
-}
 .models-item:first-child p {
     padding-bottom: 12px;
 }
