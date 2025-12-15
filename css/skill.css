@@ -185,7 +185,9 @@ nav {
     margin: 0 20px;
 }
 .skills-reflection-section {
+    max-width: 1200px;
     padding: 50px 50px;
+    margin: 0 auto;
 }
 
 .section-title {
