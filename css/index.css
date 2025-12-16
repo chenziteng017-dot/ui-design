@@ -149,6 +149,8 @@ nav {
 .carousel-container {
     position: relative;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     overflow: hidden;
     padding: 40px 0;
 }
@@ -221,6 +223,7 @@ nav {
     transform: scale(1.1);
 }
 .analysis-swiper {
+    max-width: 1200px;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -398,6 +401,8 @@ nav {
     background-color: #fff;
     display: flex;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .insights-txt {
     flex: 1;
