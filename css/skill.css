@@ -213,7 +213,7 @@ nav {
     font-style: Regular;
     line-height: 1.25;
     letter-spacing: 0%;
-    padding: 10px 10px 0;
+    padding: 16px 0px 0;
 }
 .skills-item {
     position: absolute;
@@ -226,8 +226,13 @@ nav {
 .skills-item:nth-child(3) {
     left: 100%;
 }
+.skills-item:nth-child(4) {
+    left: 152%;
+}
 .skills-item img {
     width: 100%;
+    min-height: 340px;
+    max-height: 420px;
     display: block;
 }
 .skills-reflection-section h2 {
@@ -274,10 +279,10 @@ nav {
 .promotion-text-1,
 .promotion-text-2,
 .promotion-text-3 {
+    margin-top: 16px;
     color: #fff;
     padding: 0 0 30px;
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 14px;
 }
 
 .soft-skills {
@@ -392,6 +397,7 @@ nav {
 .references-list p {
     font-size: 14px;
     line-height: 1.5;
+    padding: 10px 0 0;
     color: #fff;
 }
 .references-img-item {

@@ -215,15 +215,17 @@ prev?.addEventListener('click', () => {
         if (index === 0) {
             left = '-50%';
         } else if (index === 1) {
-            left = '0%';
+            left = '-100%';
         } else if (index === 2) {
+            left = '0%';
+        } else if (index === 3) {
             left = '52%';
         }
         item.style.left = left;
     });
 });
 
-next?.addEventListener('click', () => { 
+next?.addEventListener('click', () => {
     const skillsList = document.querySelectorAll('.skills-item');
     skillsList.forEach((item, index) => {
         let left = '0%';
@@ -232,7 +234,9 @@ next?.addEventListener('click', () => {
         } else if (index === 1) {
             left = '52%';
         } else if (index === 2) {
-            left = '100%';
+            left = '-50%';
+        } else if (index === 3) {
+            left = '-100%';
         }
         item.style.left = left;
     });

@@ -18,3 +18,7 @@ img {
 li {
     list-style: none;
 }
+
+p {
+    font-family: "Roboto", sans-serif !important;
+}
