@@ -241,3 +241,20 @@ next?.addEventListener('click', () => {
         item.style.left = left;
     });
 });
+
+function preventOrphanInTextNodes(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.nodeValue;
+        if (text && text.trim().split(' ').length > 1) {
+            const newText = text.replace(/ ([^ ]*)$/, '\u00A0$1');
+            if (newText !== text) {
+                node.nodeValue = newText;
+            }
+        }
+    } else {
+        node.childNodes.forEach(preventOrphanInTextNodes);
+    }
+}
+document.querySelectorAll('p').forEach(p => {
+    preventOrphanInTextNodes(p);
+});

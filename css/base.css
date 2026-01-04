@@ -22,3 +22,6 @@ li {
 p {
     font-family: "Roboto", sans-serif !important;
 }
+.logo img {
+    height: 36px;
+}

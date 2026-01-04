@@ -137,11 +137,14 @@ nav {
     line-height: 1.6;
 }
 .banner-btn {
+    position: relative;
+    z-index: 99;
     border: none;
     border-radius: 6px;
     padding: 10px 15px;
     margin-top: 10px;
     color: #ffffff;
+    cursor: pointer;
     background: linear-gradient(84.42deg, #066aed 0%, #8394ff 100%);
     box-shadow: 0px 4px 20px 0px #066aed1a;
 }
@@ -253,7 +256,7 @@ nav {
 
 .carousel-detail-item p {
     color: #8e8e93;
-    line-height: 1.6;
+    font-size: 16px;
 }
 
 .carousel-detail-item h1 {
@@ -374,7 +377,7 @@ nav {
     padding: 10px 0;
 }
 .industry-text p {
-    font-size: 14px;
+    font-size: 16px;
     color: #8e8e93;
 }
 .industry-dot {
@@ -588,7 +591,7 @@ nav {
 }
 .freelance p,
 .models-item-front p {
-    padding: 10px 15px;
+    padding: 10px 14px;
     color: #fff;
     font-size: 14px;
 }

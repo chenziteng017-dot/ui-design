@@ -16,6 +16,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    document.querySelector('.banner-btn').addEventListener('click', function (e) {
+        e.preventDefault();
+        const bannerSubtitle = document.querySelector('.banner-subtitle');
+        console.log(bannerSubtitle.style.opacity);
+
+        bannerSubtitle.style.transition = 'height 0.5s ease opacity 0.5s ease';
+
+        if (bannerSubtitle.style.opacity === '0') {
+            bannerSubtitle.style.opacity = 1;
+            bannerSubtitle.style.height = 'auto';
+        } else {
+            bannerSubtitle.style.opacity = 0;
+            bannerSubtitle.style.height = '0';
+        }
+    });
+
+    function preventOrphanInTextNodes(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.nodeValue;
+            if (text && text.trim().split(' ').length > 1) {
+                const newText = text.replace(/ ([^ ]*)$/, '\u00A0$1');
+                if (newText !== text) {
+                    node.nodeValue = newText;
+                }
+            }
+        } else {
+            node.childNodes.forEach(preventOrphanInTextNodes);
+        }
+    }
+    document.querySelectorAll('p').forEach(p => {
+        preventOrphanInTextNodes(p);
+    });
     const header = document.querySelector('header');
     let lastScrollTop = 0;
 

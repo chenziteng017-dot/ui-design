@@ -188,7 +188,7 @@ nav {
 }
 .skills-reflection-section {
     max-width: 1200px;
-    padding: 50px 50px;
+    padding: 12px 50px;
     margin: 0 auto;
 }
 
@@ -203,7 +203,7 @@ nav {
     width: 100%;
     position: relative;
     overflow: hidden;
-    height: 640px;
+    height: 580px;
 }
 
 .skills-item p {
@@ -239,7 +239,7 @@ nav {
     font-family: Baigo;
     font-weight: 400;
     font-style: Regular;
-    font-size: 74px;
+    font-size: 42px;
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0%;
@@ -295,7 +295,7 @@ nav {
 }
 
 .self-introduction-section {
-    padding: 50px 50px;
+    padding: 10px 50px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -355,7 +355,7 @@ nav {
     position: relative;
 }
 .conclusion-text p {
-    width: 45%;
+    width: 42%;
     font-size: 14px;
     line-height: 1.4;
     color: #fff;
